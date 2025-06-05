@@ -1,0 +1,5 @@
+steps:
+- name: 'gcr.io/cloud-builders/hugo'
+  args: ['--minify']
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['-m', 'rsync', '-r', 'public', 'gs://your-bucket-name']
